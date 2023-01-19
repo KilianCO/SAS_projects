@@ -12,12 +12,15 @@ run;
 proc print data=a;
 run;
 
+/* Statistique Descriptive */
 
-/* Analyse corrélation AFC */
+
+
+/* Analyse corrÃ©lation AFC */
 proc corresp data = a outc = sortie mca dim=4;
-			title "AFC sur les variables qualitatives";
-			tables  Style Price Size Season NeckLine SleeveLength waiseline Material FabricType Decoration Pattern_Type;
-			%plotit(data = sortie, datatype = corresp, HREF = 0, vref = 0);
-		run;
+	title "AFC sur les variables qualitatives";
+	tables  Style Price Size Season NeckLine SleeveLength waiseline Material FabricType Decoration Pattern_Type;
+	%plotit(data = sortie, datatype = corresp, HREF = 0, vref = 0);
+run;
 
 
