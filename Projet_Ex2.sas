@@ -25,7 +25,7 @@ pie seismic /
 percent=arrow
 slice=inside value=inside
 coutline=black woutline=1;
-title "Répartition de la variable seismic";
+title "RÃ©partition de la variable seismic";
 run; quit;
 
 proc gchart data=a;
@@ -33,7 +33,7 @@ pie seismoacoustic /
 percent=arrow
 slice=inside value=inside
 coutline=black woutline=1;
-title "Répartition de la variable seismoacoustic";
+title "RÃ©partition de la variable seismoacoustic";
 run; quit;
 
 proc gchart data=a;
@@ -41,7 +41,7 @@ pie shift /
 percent=arrow
 slice=inside value=inside
 coutline=black woutline=1;
-title "Répartition de la variable shift";
+title "RÃ©partition de la variable shift";
 run; quit;
 
 proc gchart data=a;
@@ -49,7 +49,7 @@ pie ghazard /
 percent=arrow
 slice=inside value=inside
 coutline=black woutline=1;
-title "Répartition de la variable ghazard";
+title "RÃ©partition de la variable ghazard";
 run; quit;
 
 proc gchart data=a;
@@ -57,7 +57,7 @@ pie class /
 percent=arrow
 slice=inside value=inside
 coutline=black woutline=1;
-title "Répartition de la variable class";
+title "RÃ©partition de la variable class";
 run; quit;
 
 
@@ -65,26 +65,26 @@ run; quit;
 proc means data=a mean std median min max var  ;
 	var genergy gpuls gdenergy gdpuls nbumps nbumps2 nbumps3 nbumps4 nbumps5 nbumps6 nbumps7 nbumps89 energy maxenergy;
 	output out=stat1 mean=mean_bmq1 mean_bmq2 ; /* pour stocker les moyennes dans une table */
-	title "Statistiques descriptives sur les variables numériques";
+	title "Statistiques descriptives sur les variables numÃ©riques";
 run;
 
 
-/* Test de normalité */
+/* Test de normalitÃ© */
 proc univariate data=a normal; 
 histogram /normal;
    var genergy gpuls gdenergy gdpuls nbumps nbumps2 nbumps3 nbumps4 nbumps5 nbumps6 nbumps7 nbumps89 energy maxenergy;
-   title "Test de normalité";
+   title "Test de normalitÃ©";
 run;
-/* Si la p-vlue est inférieure à 5% on rejette HO l'hypothèse de normalité */
+/* Si la p-vlue est infÃ©rieure Ã  5% on rejette HO l'hypothÃ¨se de normalitÃ© */
 
 
-/* Matrice corrélation */
+/* Matrice corrÃ©lation */
 PROC CORR data= a ;
 VAR genergy gpuls gdenergy gdpuls nbumps nbumps2 nbumps3 nbumps4 nbumps5 nbumps6 nbumps7 nbumps89 energy maxenergy;
 run;
 
 
-/* ACP à quatre dimensions pour avoir 75% de variance expliquée*/
+/* ACP Ã  quatre dimensions pour avoir 75% de variance expliquÃ©e*/
 proc princomp data=a out=sortie outstat=st plots(ncomp=4 flip)=(pattern(circles=1.0) score);
 title "ACP";
 var genergy gpuls gdenergy gdpuls nbumps nbumps2 nbumps3 nbumps4 nbumps5 nbumps6 nbumps7 nbumps89 energy maxenergy;
