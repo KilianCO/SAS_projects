@@ -98,7 +98,7 @@ proc corresp observed mca data = aa outc = coord dim = 7;
 	/*%plotit(data = coord, datatype = corresp, plotvars = dim5 dim6,	HREF = 0, vref = 0);*/ /* Pour les axes 5 et 6 */
 run;
 
-/* Sans plotit on n'a pas les axes dans les graphiques (pas forcément très grave) */
+/* Sans plotit on a pas les axes dans les graphiques (pas forcément très grave) */
 
 /* Alternative si plotit ne marche pas */
 
