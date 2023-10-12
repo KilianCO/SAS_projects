@@ -1,4 +1,4 @@
-/* Description des données */
+/* Description des donnÃ©es */
 PROC IMPORT OUT= genes
  DATAFILE= "U:\Mes documents\M2\Data Mining Project\genes.txt"
  DBMS=DLM REPLACE;
@@ -63,12 +63,12 @@ run;
 
 proc plot data = sortie1;
 	plot v1*v2;
-	title "Les deux premières variables canoniques pour X";
+	title "Les deux premiÃ¨res variables canoniques pour X";
 run;
 
 proc plot data = sortie1;
 	plot w1*w2;
-	title "Les deux premières variables canoniques pour Y";
+	title "Les deux premiÃ¨res variables canoniques pour Y";
 run;
 
 proc plot data = sortie1;
