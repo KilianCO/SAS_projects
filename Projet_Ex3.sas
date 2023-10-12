@@ -16,14 +16,14 @@ proc import out= Test(keep = STG SCG STR LPR PEG UNS)
 run;
 
 
-/* Première visualisation */
+/* PremiÃ¨re visualisation */
 proc print data = Train;
 run;
 
 proc print data = Test;
 run;
 
-/* Fusion des deux jeux de données */
+/* Fusion des deux jeux de donnÃ©es */
 DATA d;
 SET Train Test;
 RUN;
@@ -42,7 +42,7 @@ proc freq data = d;
 	tables UNS;
 run;
 
-/* Split du jeu de données */
+/* Split du jeu de donnÃ©es */
 data train test;
 set d;
 if rand("Uniform") > 0.2 then output train;
@@ -55,7 +55,7 @@ proc discrim data = Train anova;
 	class UNS;
 	var STG SCG STR LPR PEG;   
 run;
-/* On enlève les variables dont la p-value est supérieure à 0.05 */
+/* On enlÃ¨ve les variables dont la p-value est supÃ©rieure Ã  0.05 */
 /* Ici il n'y en a pas */
 /* Toutes les variables sont donc significatives */
 
@@ -104,7 +104,7 @@ proc discrim data = Train method = npar kernel = normal r=5.5 crossvalidate out 
 run;
 
 
-/* Test de la meilleure méthode sur notre jeu de données Test */
+/* Test de la meilleure mÃ©thode sur notre jeu de donnÃ©es Test */
 proc discrim data = train testdata = test method = npar r = 3 kernel = normal;
 	class UNS;
 	var STG SCG STR LPR PEG;
