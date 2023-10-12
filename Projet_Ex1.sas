@@ -15,7 +15,7 @@ run;
 /* Statistique Descriptive */
 
 proc means data = a mean std median min max var  ;
-	var Rating ; /* possibilité de calculer les stats sur 2 variables en même temps */
+	var Rating ; /* possibilitÃ© de calculer les stats sur 2 variables en mÃªme temps */
 	output out=stat1 mean=mean_bmq1 ; /* pour stocker les moyennes dans une table */
 run;
 
@@ -45,7 +45,7 @@ run;
 
 
 
-/* Analyse corrélation AFC */
+/* Analyse corrÃ©lation AFC */
 proc corresp data = a outc = sortie mca dim=4;
 	title "AFC sur les variables qualitatives";
 	tables  Style Price Size Season NeckLine SleeveLength waiseline Material FabricType Decoration Pattern_Type;
