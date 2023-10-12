@@ -25,7 +25,7 @@ run;
 proc univariate data=tempnorm normal;
 	     var tempcorps ;
 		 histogram /normal;
-		 title "Histogramme des données de température corporelle";
+		 title "Histogramme des donnÃ©es de tempÃ©rature corporelle";
 		 axis2 label=("Occurences");
 run;
 
@@ -36,7 +36,7 @@ proc means data=tempnorm;
    var tempcorps;
    run;
 
-/* On voit que la température moyenne est de 98.2 °F */
+/* On voit que la tempÃ©rature moyenne est de 98.2 Â°F */
 
 /* Test de Student */
 proc ttest data=tempnorm;
@@ -64,7 +64,7 @@ run;
 
 /* Question 6 */
 proc means data=tempnorm min mean std Q1 Q3 median max;
-	var tempcorps; /* possibilité de calculer les stats sur 2 variables en même temps */
+	var tempcorps; /* possibilitÃ© de calculer les stats sur 2 variables en mÃªme temps */
 	output out=stat min=the_min mean=the_mean std=the_std Q1=the_quart1 median=the_median Q3=the_quart3 max=the_max ; /* pour stocker les moyennes dans une table */
 run;
 
@@ -248,7 +248,7 @@ run;
 
 %descriptive(tempnorm9,tempcorps,freqcard,sexe,tempcorps_qual);
 
-/* Cela ne marche pas car je n'ai pas réussi à faire la question 9 dans laquelle la variable "tempcorps_qual" aurait dû être créée */
+/* Cela ne marche pas car je n'ai pas rÃ©ussi Ã  faire la question 9 dans laquelle la variable "tempcorps_qual" aurait dÃ» Ãªtre crÃ©Ã©e */
 
 
 
